@@ -202,10 +202,9 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
 
-      {/* Sub-bar: Navigation Tabs & Parameter Quick Selectors */}
-      <div className="border-t border-slate-200 bg-slate-50/80 px-3 sm:px-4 py-1.5 flex flex-wrap items-center justify-between gap-2">
-        {/* High Density Tab Bar */}
-        <nav className="flex items-center gap-1 overflow-x-auto scrollbar-none py-0.5">
+      {/* Row 2: Navigation Tabs (第 2 行：居中展示) */}
+      <div className="border-t border-slate-200 bg-slate-50/90 px-3 sm:px-4 py-1.5 flex items-center justify-center">
+        <nav className="flex items-center justify-center gap-1 overflow-x-auto scrollbar-none py-0.5 max-w-full">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
@@ -225,11 +224,13 @@ export const Header: React.FC<HeaderProps> = ({
             );
           })}
         </nav>
+      </div>
 
-        {/* Hyperparameter Quick Tuning Bar */}
-        <div className="flex items-center flex-wrap gap-2 text-xs">
+      {/* Row 3: Hyperparameter Quick Tuning Bar (第 3 行：居中展示) */}
+      <div className="border-t border-slate-200/70 bg-slate-100/60 px-3 sm:px-4 py-1.5 flex items-center justify-center">
+        <div className="flex items-center justify-center flex-wrap gap-2.5 sm:gap-3 text-xs max-w-full">
           {/* Speed Selector */}
-          <div className="flex items-center gap-1 bg-white border border-slate-200 rounded px-2 py-0.5">
+          <div className="flex items-center gap-1 bg-white border border-slate-200 rounded px-2.5 py-0.5 shadow-2xs">
             <span className="text-[11px] text-slate-400 font-medium">倍速:</span>
             <select
               value={simSpeed}
@@ -244,7 +245,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Learning Rate Slider */}
-          <div className="flex items-center gap-1.5 bg-white border border-slate-200 rounded px-2 py-0.5">
+          <div className="flex items-center gap-1.5 bg-white border border-slate-200 rounded px-2.5 py-0.5 shadow-2xs">
             <span className="text-[11px] text-slate-400 font-medium">η 学习率:</span>
             <input
               type="range"
@@ -253,7 +254,7 @@ export const Header: React.FC<HeaderProps> = ({
               step="0.005"
               value={learningRate}
               onChange={(e) => onLearningRateChange(parseFloat(e.target.value))}
-              className="w-16 accent-blue-600 cursor-pointer"
+              className="w-16 sm:w-20 accent-blue-600 cursor-pointer"
             />
             <span className="font-mono font-bold text-blue-700 w-10 text-right text-xs">
               {learningRate.toFixed(3)}
@@ -261,7 +262,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Activation Selector */}
-          <div className="flex items-center gap-1 bg-white border border-slate-200 rounded px-2 py-0.5">
+          <div className="flex items-center gap-1 bg-white border border-slate-200 rounded px-2.5 py-0.5 shadow-2xs">
             <span className="text-[11px] text-slate-400 font-medium">激活:</span>
             <select
               value={activation}
@@ -277,7 +278,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Optimizer Selector */}
-          <div className="flex items-center gap-1 bg-white border border-slate-200 rounded px-2 py-0.5">
+          <div className="flex items-center gap-1 bg-white border border-slate-200 rounded px-2.5 py-0.5 shadow-2xs">
             <span className="text-[11px] text-slate-400 font-medium">优化器:</span>
             <select
               value={optimizer}
