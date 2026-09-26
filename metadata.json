@@ -1,0 +1,6 @@
+{
+  "name": "BP 神经网络与反向传播演化实验室",
+  "description": "交互式 BP 神经网络与反向传播演化实验室：包含树状运筹建模、信号流与误差逆流 2D 脉冲动画、损失动态轨迹、决策边界拓扑演化、六大经典应用案例库、NumPy/PyTorch 双代码引擎、AI 智能诊断与知识图谱导引。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
